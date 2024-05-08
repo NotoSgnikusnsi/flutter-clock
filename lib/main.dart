@@ -42,8 +42,11 @@ class _HomePageState extends State<HomePage> {
 
   void _updateTime(Timer timer) {
     DateTime _newCurrentTime = DateTime.now();
+    String _newCurrentHour = _newCurrentTime.hour.toString();
+    String _newCurrentMinute = _newCurrentTime.minute.toString();
+    String _newCurrentSecond = _newCurrentTime.second.toString();
     String _newCurrentTimeString =
-        "${_newCurrentTime.hour}:${_newCurrentTime.minute}:${_newCurrentTime.second.toString().length == 1 ? '0${_newCurrentTime.second}' : _newCurrentTime.second}";
+        "$_newCurrentHour:$_newCurrentMinute:${_newCurrentSecond.length == 1 ? '0$_newCurrentSecond' : _newCurrentSecond}";
 
     setState(() {
       _now = _newCurrentTimeString;
